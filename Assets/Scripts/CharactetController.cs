@@ -1,18 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CharactetController : MonoBehaviour
 {
     public float moveSpeed;
-    public float jumpSpeed;
+    public float runSpeed, walkSpeed, crouchSpeed, jumpSpeed;
+    public float curHealth;
     private float verticalDirection;
     private float horizontalDirection;
-
-
+    public Text hp;
+    public bool isZoomedIn;
+    public bool damaged;
 
     void Update()
     {
+        hp.text = "HP: " + curHealth;
 
         verticalDirection = Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime;
         horizontalDirection = Input.GetAxis("Horizontal") * moveSpeed / 3 * Time.deltaTime;
@@ -36,5 +40,11 @@ public class CharactetController : MonoBehaviour
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+    }
+
+    public void DamagePlayer(float damage)
+    {
+        damaged = true;
+        curHealth -= damage;
     }
 }

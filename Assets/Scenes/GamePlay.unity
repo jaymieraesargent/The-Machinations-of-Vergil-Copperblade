@@ -2321,7 +2321,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 10
+  runSpeed: 20
+  walkSpeed: 5
+  crouchSpeed: 3
   jumpSpeed: 7
+  curHealth: 20
+  hp: {fileID: 476762850}
+  isZoomedIn: 0
+  damaged: 0
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -8894,25 +8901,15 @@ PrefabInstance:
       propertyPath: m_Center.y
       value: -0.5505645
       objectReference: {fileID: 0}
-    - target: {fileID: 8377022262797383894, guid: 577a44ce3bb52f64a9fc996a323f14f8,
+    - target: {fileID: 8377022262797383897, guid: 577a44ce3bb52f64a9fc996a323f14f8,
         type: 3}
-      propertyPath: hp
-      value: 
-      objectReference: {fileID: 476762850}
-    - target: {fileID: 8377022262797383894, guid: 577a44ce3bb52f64a9fc996a323f14f8,
-        type: 3}
-      propertyPath: jumpSpeed
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 8377022262797383894, guid: 577a44ce3bb52f64a9fc996a323f14f8,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
+      propertyPath: sensitivity
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 8377022262797383898, guid: 577a44ce3bb52f64a9fc996a323f14f8,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 23.14
+      value: 22.24
       objectReference: {fileID: 0}
     - target: {fileID: 8377022262797383898, guid: 577a44ce3bb52f64a9fc996a323f14f8,
         type: 3}
