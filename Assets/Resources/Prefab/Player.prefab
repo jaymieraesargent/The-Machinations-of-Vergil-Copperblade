@@ -3026,7 +3026,6 @@ GameObject:
   - component: {fileID: 8377022262797383893}
   - component: {fileID: 8377022262797383897}
   - component: {fileID: 8377022262797383894}
-  - component: {fileID: 8377022262797383896}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -3149,24 +3148,6 @@ MonoBehaviour:
   hp: {fileID: 0}
   isZoomedIn: 0
   damaged: 0
---- !u!143 &8377022262797383896
-CharacterController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8377022262797383888}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Height: 2
-  m_Radius: 0.5
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8377022262869540851
 GameObject:
   m_ObjectHideFlags: 0
@@ -3882,15 +3863,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 03a4a1935a9f4454c861dfa0aa6df562, type: 3}
---- !u!198 &8377022261580651145 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 19800000, guid: 03a4a1935a9f4454c861dfa0aa6df562,
-    type: 3}
-  m_PrefabInstance: {fileID: 8377022261565310281}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8377022261565448137 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 03a4a1935a9f4454c861dfa0aa6df562,
+    type: 3}
+  m_PrefabInstance: {fileID: 8377022261565310281}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &8377022261580651145 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 19800000, guid: 03a4a1935a9f4454c861dfa0aa6df562,
     type: 3}
   m_PrefabInstance: {fileID: 8377022261565310281}
   m_PrefabAsset: {fileID: 0}
