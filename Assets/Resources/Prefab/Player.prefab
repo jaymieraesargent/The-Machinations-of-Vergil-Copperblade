@@ -907,9 +907,9 @@ MonoBehaviour:
   reloadSound: {fileID: 6158363159642079426}
   impactEffect: {fileID: 100002, guid: 99c73c92ac40473459640b165473206f, type: 3}
   bulletShell: {fileID: 6152289356963146029}
-  bulletEndPoint: {fileID: 0}
-  bulletShellAmmo: {fileID: 0}
+  firePoint: {fileID: 0}
   bullet: {fileID: 0}
+  myBullet: {fileID: 0}
   bulletHole: {fileID: 6491150453938503772, guid: 14b7f3032aee3bc4493aaf0da5f6d26a,
     type: 3}
   ammoCount: {fileID: 0}
@@ -3123,7 +3123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   axis: 0
-  sensitivity: 100
+  sensitivity: 200
   minY: -60
   maxY: 60
   isTesting: 0
@@ -3139,11 +3139,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e619028508658445bc54c739aeab6dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
-  runSpeed: 5
+  moveSpeed: 8
+  runSpeed: 12
   walkSpeed: 3
   crouchSpeed: 2
-  jumpSpeed: 5
+  jumpSpeed: 6
   curHealth: 100
   _gravity: 20
   hp: {fileID: 0}
@@ -3670,10 +3670,9 @@ MonoBehaviour:
   reloadSound: {fileID: 8378721531540547583}
   impactEffect: {fileID: 100002, guid: 99c73c92ac40473459640b165473206f, type: 3}
   bulletShell: {fileID: 8377022262517468913}
-  bulletEndPoint: {fileID: 1020395116}
-  bulletShellAmmo: {fileID: 1206868768926276, guid: 0c1be510a5f00b449ae006461270ac32,
-    type: 3}
+  firePoint: {fileID: 0}
   bullet: {fileID: 5701686758959501717, guid: e7a0b05fe17613c41be15961e1191750, type: 3}
+  myBullet: {fileID: 0}
   bulletHole: {fileID: 6491150453938503772, guid: 14b7f3032aee3bc4493aaf0da5f6d26a,
     type: 3}
   ammoCount: {fileID: 0}

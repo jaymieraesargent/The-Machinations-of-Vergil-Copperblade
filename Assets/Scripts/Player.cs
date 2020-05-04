@@ -14,7 +14,6 @@ public class Player : MonoBehaviour
     //Reference Variable
     private CharacterController _charController;
     public Text hp;
-    public int team; //0 red, 1 blue
 
     public bool isZoomedIn;
     public bool damaged;
@@ -29,10 +28,6 @@ public class Player : MonoBehaviour
         float vert = Input.GetAxis("Vertical");
         Move(horiz, vert);
         hp.text = "HP: " + curHealth;
-        if(curHealth<=0)
-        {
-            Respawn();
-        }
     }
     public void Move(float horizontal, float vertical)
     {
@@ -56,7 +51,7 @@ public class Player : MonoBehaviour
             {
                 moveSpeed = crouchSpeed;
             }
-            else if (isZoomedIn) //isZoomedIn == true
+            else if(isZoomedIn) //isZoomedIn == true
             {
                 moveSpeed = crouchSpeed;
             }
@@ -77,11 +72,6 @@ public class Player : MonoBehaviour
         _moveDir.y -= _gravity * Time.deltaTime;
         //apply mo
         _charController.Move(_moveDir * Time.deltaTime);
-    }
-
-    public void Respawn()
-    {
-        Map.Instance.Respawn(this.gameObject);
     }
 
     public void DamagePlayer(float damage)
