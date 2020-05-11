@@ -10,6 +10,8 @@ public class Gun : MonoBehaviour
     public float fireRate = 15f;
     public float impaceForce = 50f;
     public float bulletSpeed = 100f;
+    public float yAxis;
+    public float xAxis;
 
     public int maxAmmo = 10;
     public int currentAmmo = 30;
@@ -141,34 +143,35 @@ public class Gun : MonoBehaviour
         {
             gunShots.Play();
             muzzleFlash.Play();
-            anim.SetBool("Firing", true);
             currentAmmo--;
 
             if (ammoCount != null)
             {
                 ammoCount.text = currentAmmo.ToString();
             }
-                RaycastHit hit;
-            if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
+            RaycastHit hit;
+            if (isZoomingIn == true)
             {
-                Debug.Log(hit.transform.name);
-
-                Enemy enemy = hit.transform.GetComponentInParent<Enemy>();
-                if (enemy != null)
+                if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
                 {
-                    enemy.Damage(damage);
-                }
-                if (hit.rigidbody != null)
-                {
-                    hit.rigidbody.AddForce(-transform.position * impaceForce);
-                }
+                    Debug.Log(hit.transform.name);
 
-                GameObject impactGO = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
-                impactGO = Instantiate(bullet, bulletShell.position, transform.rotation);
-                impactGO.GetComponent<Rigidbody>().AddForce(bulletShell.right * 250);
-                Destroy(impactGO, 2f);
-                var hitRotation = Quaternion.FromToRotation(Vector3.up, hit.normal);
-                Instantiate(bulletHole, hit.point, hitRotation);
+                    GameObject impactGO = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
+                    Destroy(impactGO, 2f);
+                    var hitRotation = Quaternion.FromToRotation(Vector3.up, hit.normal);
+                    Instantiate(bulletHole, hit.point, hitRotation);
+                }
+            }
+            else
+            {
+                Vector2 RandomShot = new Vector2(Random.Range(xAxis, yAxis), Random.Range(xAxis, yAxis));
+                if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward + new Vector3(RandomShot.x, RandomShot.y, 0), out hit, range))
+                {
+                    GameObject impactGO = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
+                    Destroy(impactGO, 2f);
+                    var hitRotation = Quaternion.FromToRotation(Vector3.up, hit.normal);
+                    Instantiate(bulletHole, hit.point, hitRotation);
+                }
             }
         }
         else
@@ -177,4 +180,4 @@ public class Gun : MonoBehaviour
         }
     }
 }
-        
+

@@ -40,17 +40,17 @@ public class WeaponSwitch : MonoBehaviour
         {
             selectedWeapon = 0;
         }
-        if (Input.GetKeyDown(KeyCode.Alpha2) && transform.childCount >= 2)
+        if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             selectedWeapon = 1;
         }
-        if (Input.GetKeyDown(KeyCode.Alpha3) && transform.childCount >= 3)
+        if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            selectedWeapon = 1;
+            selectedWeapon = 2;
         }
-        if (Input.GetKeyDown(KeyCode.Alpha4) && transform.childCount >= 4)
+        if (Input.GetKeyDown(KeyCode.Alpha4))
         {
-            selectedWeapon = 1;
+            selectedWeapon = 3;
         }
 
         if (previousSelectedWeapon != selectedWeapon)
@@ -63,7 +63,7 @@ public class WeaponSwitch : MonoBehaviour
         int i = 0;
         foreach (Transform weapon in transform)
         {
-            if(i == selectedWeapon)
+            if (i == selectedWeapon)
             {
                 weapon.gameObject.SetActive(true);
 
