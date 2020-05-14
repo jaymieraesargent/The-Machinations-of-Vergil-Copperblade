@@ -247,6 +247,8 @@ MonoBehaviour:
   fireRate: 3
   impaceForce: 50
   bulletSpeed: 20
+  yAxis: 0
+  xAxis: 0
   maxAmmo: 12
   currentAmmo: 12
   reloadTime: 2
@@ -2758,6 +2760,8 @@ MonoBehaviour:
   fireRate: 10
   impaceForce: 100
   bulletSpeed: 100
+  yAxis: 0
+  xAxis: 0
   maxAmmo: 30
   currentAmmo: 30
   reloadTime: 2
@@ -3209,11 +3213,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb425a975d509c4428d0f28f69856f55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axis: 1
-  sensitivity: 100
-  minY: -60
-  maxY: 60
-  isTesting: 0
+  axes: 2
+  sensitivityX: 7
+  sensitivityY: 7
+  minimumX: -360
+  maximumX: 360
+  minimumY: -60
+  maximumY: 60
 --- !u!114 &251919075099479857
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3464,11 +3470,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb425a975d509c4428d0f28f69856f55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axis: 0
-  sensitivity: 200
-  minY: -60
-  maxY: 60
-  isTesting: 0
+  axes: 1
+  sensitivityX: 7
+  sensitivityY: 7
+  minimumX: -360
+  maximumX: 360
+  minimumY: -60
+  maximumY: 60
 --- !u!114 &8592822240495755001
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3485,11 +3493,12 @@ MonoBehaviour:
   runSpeed: 12
   walkSpeed: 3
   crouchSpeed: 2
-  jumpSpeed: 6
-  curHealth: 100
+  jumpSpeed: 3
+  curHealth: 20
   hp: {fileID: 0}
   isZoomedIn: 0
   damaged: 0
+  team: 0
 --- !u!54 &8592822240559394506
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -332,8 +332,8 @@ MonoBehaviour:
   fireRate: 2
   impaceForce: 50
   bulletSpeed: 100
-  yAxis: 0
-  xAxis: 0
+  yAxis: 0.05
+  xAxis: -0.05
   maxAmmo: 36
   currentAmmo: 6
   reloadTime: 3
@@ -1218,8 +1218,8 @@ MonoBehaviour:
   fireRate: 3
   impaceForce: 50
   bulletSpeed: 20
-  yAxis: 0
-  xAxis: 0
+  yAxis: 0.05
+  xAxis: -0.05
   maxAmmo: 12
   currentAmmo: 12
   reloadTime: 2
@@ -2879,7 +2879,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7293085892360487931
 Transform:
   m_ObjectHideFlags: 0
@@ -3321,11 +3321,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb425a975d509c4428d0f28f69856f55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axis: 1
-  sensitivity: 100
-  minY: -60
-  maxY: 60
-  isTesting: 0
+  axes: 0
+  sensitivityX: 15
+  sensitivityY: 15
+  minimumX: -360
+  maximumX: 360
+  minimumY: -60
+  maximumY: 60
 --- !u!114 &808708382
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3360,7 +3362,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8377022262797383898
 Transform:
   m_ObjectHideFlags: 0
@@ -3435,11 +3437,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb425a975d509c4428d0f28f69856f55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axis: 0
-  sensitivity: 200
-  minY: -60
-  maxY: 60
-  isTesting: 0
+  axes: 0
+  sensitivityX: 15
+  sensitivityY: 15
+  minimumX: -360
+  maximumX: 360
+  minimumY: -60
+  maximumY: 60
 --- !u!114 &8377022262797383894
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3461,6 +3465,7 @@ MonoBehaviour:
   hp: {fileID: 0}
   isZoomedIn: 0
   damaged: 0
+  team: 0
 --- !u!54 &690596454
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3982,8 +3987,8 @@ MonoBehaviour:
   fireRate: 10
   impaceForce: 100
   bulletSpeed: 100
-  yAxis: 0
-  xAxis: 0
+  yAxis: 0.1
+  xAxis: -0.1
   maxAmmo: 30
   currentAmmo: 30
   reloadTime: 2
@@ -4196,6 +4201,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Double-barrel_gun
       objectReference: {fileID: 0}
+    - target: {fileID: 1073509418720209285, guid: c365e83889b65da4ca2bb6de664ee7e3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1076638150601577723, guid: c365e83889b65da4ca2bb6de664ee7e3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4251,6 +4261,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8837459387706346245, guid: c365e83889b65da4ca2bb6de664ee7e3,
+        type: 3}
+      propertyPath: yAxis
+      value: 0.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 8837459387706346245, guid: c365e83889b65da4ca2bb6de664ee7e3,
+        type: 3}
+      propertyPath: xAxis
+      value: -0.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 8837459387706346245, guid: c365e83889b65da4ca2bb6de664ee7e3,
+        type: 3}
+      propertyPath: fpsCam
+      value: 
+      objectReference: {fileID: 8377022262730952688}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c365e83889b65da4ca2bb6de664ee7e3, type: 3}
 --- !u!4 &6883264877027936650 stripped

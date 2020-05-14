@@ -13,11 +13,15 @@ public class Player : MonoBehaviour
     public Text hp;
     public bool isZoomedIn;
     public bool damaged;
+    public int team;
 
     void Update()
     {
         hp.text = "HP: " + curHealth;
-
+        if(curHealth<=0)
+        {
+            Map.Instance.Respawn(this.gameObject);
+        }
         verticalDirection = Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime;
         horizontalDirection = Input.GetAxis("Horizontal") * moveSpeed / 3 * Time.deltaTime;
         transform.Translate(horizontalDirection, 0, verticalDirection);

@@ -19,7 +19,7 @@ public class Map : MonoBehaviour
     {
         Player playerscript = player.GetComponent<Player>();
         playerscript.curHealth = 100;
-        /*if (playerscript.team == 0)
+        if (playerscript.team == 0)
         {
             player.transform.position = RedTeamRespawn[Random.Range(0, RedTeamRespawn.Length)].transform.position;
         }
@@ -27,6 +27,5 @@ public class Map : MonoBehaviour
         {
             player.transform.position = BlueTeamRespawn[Random.Range(0, BlueTeamRespawn.Length)].transform.position;
         }
-        */
     }
 }
