@@ -3374,6 +3374,7 @@ GameObject:
   - component: {fileID: 8592822240495755002}
   - component: {fileID: 8592822240495754998}
   - component: {fileID: 8592822240495755001}
+  - component: {fileID: 1160213170286267195}
   - component: {fileID: 8592822240559394506}
   m_Layer: 0
   m_Name: PlayerFix
@@ -3494,11 +3495,35 @@ MonoBehaviour:
   walkSpeed: 3
   crouchSpeed: 2
   jumpSpeed: 3
+  jetPackPower: 0
   curHealth: 20
+  maxHealth: 0
+  regenerateHealth: 0
+  healthRegenerationRate: 0
+  healthPackModifier: 0
+  currentJetPackFuel: 0
+  maximumJetPackFuel: 0
+  fuelConsumptionRate: 0
   hp: {fileID: 0}
   isZoomedIn: 0
   damaged: 0
   team: 0
+  myQuirkName: 
+--- !u!114 &1160213170286267195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8592822240495755007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7fb91b341cc6a74aa8bf98e3caad6e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myQuirk: {fileID: 0}
+  player: {fileID: 0}
+  myGun: {fileID: 0}
 --- !u!54 &8592822240559394506
 Rigidbody:
   m_ObjectHideFlags: 0
