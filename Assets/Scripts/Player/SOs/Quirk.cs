@@ -6,6 +6,7 @@ using UnityEngine;
 public class Quirk : ScriptableObject
 {
     public string quirkName;
+    public string quirkDescription;
     public int playerMaxHealth;
     public bool playerRegeneratesHealth = false;
     public int playerRegenerationRate;

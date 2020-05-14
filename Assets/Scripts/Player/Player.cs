@@ -22,7 +22,8 @@ public class Player : MonoBehaviour
     private float verticalDirection;
     private float horizontalDirection;
 
-    public Text hp;
+    public Image healthImage;
+
 
     public bool isZoomedIn;
     public bool damaged;
@@ -32,7 +33,7 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        hp.text = "HP: " + curHealth;
+        
         if(curHealth<=0)
         {
             Map.Instance.Respawn(this.gameObject);
@@ -46,6 +47,8 @@ public class Player : MonoBehaviour
         {
             Cursor.lockState = CursorLockMode.None;
         }
+
+        //Jet Pack Control
 
         if (Input.GetKey(KeyCode.Space))
         {
@@ -63,6 +66,8 @@ public class Player : MonoBehaviour
                 JetPack();
             }
         }
+        
+        //Quirk bools
 
         if(regenerateHealth)
         {
@@ -71,6 +76,12 @@ public class Player : MonoBehaviour
                 curHealth += healthRegenerationRate * Time.deltaTime;
             }
         }
+
+        //UI effects
+        var damageOpacityEffect = healthImage.color;
+        damageOpacityEffect.a = 1 - (curHealth / maxHealth);
+        healthImage.color = damageOpacityEffect;
+
     }
     void Start()
     {
