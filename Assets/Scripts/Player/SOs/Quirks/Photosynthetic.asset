@@ -10,16 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0ce34c53dbf2ca74b8a4317499fc7dc8, type: 3}
-  m_Name: Fleshy
+  m_Name: Photosynthetic
   m_EditorClassIdentifier: 
-  quirkName: Fleshy
-  quirkDescription: 
-  playerMaxHealth: 40
-  playerRegeneratesHealth: 0
-  playerRegenerationRate: 0
-  playerHealthPackModifier: 1
+  quirkName: Photosynthetic
+  quirkDescription: Some bullshit goes here
+  playerMaxHealth: 20
+  playerRegeneratesHealth: 1
+  playerRegenerationRate: 2
+  playerHealthPackModifier: 0.25
   playerMaxJetPackFuel: 10
-  playerJetPackPower: 5
-  playerMovementSpeed: 8
+  playerJetPackPower: 10
+  playerMovementSpeed: 12
   weaponMaxAmmo: 0
   weaponReloadModifier: 0
+  quirkIcon: {fileID: 21300000, guid: 60d627986baaa9f4bb4f76bea1270411, type: 3}
+  quirkParticleVisual: {fileID: 0}
+  quirkMaterialVisual: {fileID: 0}

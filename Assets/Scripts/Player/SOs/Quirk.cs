@@ -17,4 +17,8 @@ public class Quirk : ScriptableObject
     public int weaponMaxAmmo;
     public float weaponReloadModifier;
 
+    public Sprite quirkIcon;
+    public ParticleSystem quirkParticleVisual;
+    public Material quirkMaterialVisual;
+
 }
