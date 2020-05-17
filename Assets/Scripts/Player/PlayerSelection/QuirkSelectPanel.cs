@@ -24,5 +24,20 @@ public class QuirkSelectPanel : MonoBehaviour
             iconImage.sprite = quirkSelect.quirkIcon;
         }
     }
+
+    public void SetSelected()
+    {
+        QuirkSelectPanel[] tempPanels = transform.parent.GetComponentsInChildren<QuirkSelectPanel>();
+
+        foreach (QuirkSelectPanel panel in tempPanels)
+        {
+            panel.GetComponent<Image>().enabled = false;
+        }
+
+        this.GetComponent<Image>().enabled = true;
+    }
+
+    
+
     
 }

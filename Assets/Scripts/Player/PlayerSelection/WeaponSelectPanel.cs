@@ -23,5 +23,16 @@ public class WeaponSelectPanel : MonoBehaviour
             iconImage.sprite = weaponSelect.weaponIcon;
         }
     }
-    
+    public void SetSelected()
+    {
+        WeaponSelectPanel[] tempPanels = transform.parent.GetComponentsInChildren<WeaponSelectPanel>();
+
+        
+        foreach (WeaponSelectPanel panel in tempPanels)
+        {
+            panel.GetComponent<Image>().enabled = false;
+        }
+
+        this.GetComponent<Image>().enabled = true;
+    }
 }
