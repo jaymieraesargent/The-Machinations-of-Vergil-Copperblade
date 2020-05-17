@@ -4607,8 +4607,12 @@ PrefabInstance:
         type: 3}
       propertyPath: myQuirk
       value: 
-      objectReference: {fileID: 11400000, guid: e9887630c9e57d545a17648fe54845c7,
-        type: 2}
+      objectReference: {fileID: 0}
+    - target: {fileID: 8592822240295184857, guid: b9a88d4251ff3574e8a2ba59e340b8c5,
+        type: 3}
+      propertyPath: axes
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8592822240495754997, guid: b9a88d4251ff3574e8a2ba59e340b8c5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4679,6 +4683,11 @@ PrefabInstance:
       propertyPath: axes
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8592822240495754998, guid: b9a88d4251ff3574e8a2ba59e340b8c5,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8592822240495755001, guid: b9a88d4251ff3574e8a2ba59e340b8c5,
         type: 3}
       propertyPath: hp
@@ -4718,6 +4727,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PlayerFix
+      objectReference: {fileID: 0}
+    - target: {fileID: 8592822240559394506, guid: b9a88d4251ff3574e8a2ba59e340b8c5,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 80
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b9a88d4251ff3574e8a2ba59e340b8c5, type: 3}

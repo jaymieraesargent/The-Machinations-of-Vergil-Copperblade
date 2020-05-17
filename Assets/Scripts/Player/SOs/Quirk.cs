@@ -7,13 +7,13 @@ public class Quirk : ScriptableObject
 {
     public string quirkName;
     public string quirkDescription;
-    public int playerMaxHealth;
+    public int playerMaxHealth = 20;
     public bool playerRegeneratesHealth = false;
-    public int playerRegenerationRate;
-    public float playerHealthPackModifier;
-    public int playerMaxJetPackFuel;
-    public int playerJetPackPower;
-    public int playerMovementSpeed;
+    public int playerRegenerationRate = 2;
+    public float playerHealthPackModifier = 1;
+    public int playerMaxJetPackFuel = 20;
+    public int playerJetPackPower = 10;
+    public int playerMovementSpeed = 10;
     public int weaponMaxAmmo;
     public float weaponReloadModifier;
 
