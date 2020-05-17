@@ -4,15 +4,14 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    private void Update()
+    private void Start()
     {
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
     }
-    public void NextScene()
+    public void ChangeScene(int Scene)
     {
-        Scene activeScene = SceneManager.GetActiveScene();
-        SceneManager.LoadScene(activeScene.buildIndex + 1);
+        SceneManager.LoadScene(Scene);
     }
     public void QuitGame()
     {
