@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0ce34c53dbf2ca74b8a4317499fc7dc8, type: 3}
-  m_Name: New Quirk
+  m_Name: Virgo
   m_EditorClassIdentifier: 
-  quirkName: 
-  quirkDescription: 
-  playerMaxHealth: 20
+  quirkName: Virgo
+  quirkDescription: Running keeps you alive. That's it. Just keep running!
+  playerMaxHealth: 15
   playerRegeneratesHealth: 0
   playerRegenerationRate: 2
-  playerHealthPackModifier: 1
+  playerHealthPackModifier: 3
   playerMaxJetPackFuel: 20
-  playerJetPackPower: 10
-  playerMovementSpeed: 10
-  weaponMaxAmmo: 0
+  playerJetPackPower: 16
+  playerMovementSpeed: 16
+  weaponMaxAmmo: -3
   weaponReloadModifier: 0
   quirkIcon: {fileID: 0}
   quirkParticleVisual: {fileID: 0}

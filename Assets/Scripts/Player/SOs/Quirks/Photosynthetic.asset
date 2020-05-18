@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Photosynthetic
   m_EditorClassIdentifier: 
   quirkName: Photosynthetic
-  quirkDescription: Some bullshit goes here
+  quirkDescription: Sunlight feeds you through your skin. Let the warmth drive you
+    into a hazy, comfortable frenzy.
   playerMaxHealth: 20
   playerRegeneratesHealth: 1
   playerRegenerationRate: 2

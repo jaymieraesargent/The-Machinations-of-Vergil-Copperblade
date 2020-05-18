@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Munitionist
   m_EditorClassIdentifier: 
   quirkName: Munitionist
-  quirkDescription: 
+  quirkDescription: They'll say you're suspicious, paranoid, nervous, jittery, anxious
+    but they won't have much to say once your gun is empty!
   playerMaxHealth: 20
   playerRegeneratesHealth: 0
   playerRegenerationRate: 2

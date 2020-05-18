@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0ce34c53dbf2ca74b8a4317499fc7dc8, type: 3}
-  m_Name: Fleshy
+  m_Name: Corpulent
   m_EditorClassIdentifier: 
-  quirkName: Fleshy
-  quirkDescription: Some bullshit goes here
+  quirkName: Corpulent
+  quirkDescription: What can only be the result of genetic splicing with a Rhinocerus,
+    a Corpulent is tougher, meaner and thicker than the average bloke.
   playerMaxHealth: 40
   playerRegeneratesHealth: 0
   playerRegenerationRate: 0
