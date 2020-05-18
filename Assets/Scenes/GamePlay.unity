@@ -4611,7 +4611,7 @@ PrefabInstance:
     - target: {fileID: 8592822240295184857, guid: b9a88d4251ff3574e8a2ba59e340b8c5,
         type: 3}
       propertyPath: axes
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8592822240495754997, guid: b9a88d4251ff3574e8a2ba59e340b8c5,
         type: 3}
@@ -4681,12 +4681,12 @@ PrefabInstance:
     - target: {fileID: 8592822240495754998, guid: b9a88d4251ff3574e8a2ba59e340b8c5,
         type: 3}
       propertyPath: axes
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8592822240495754998, guid: b9a88d4251ff3574e8a2ba59e340b8c5,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8592822240495755001, guid: b9a88d4251ff3574e8a2ba59e340b8c5,
         type: 3}
