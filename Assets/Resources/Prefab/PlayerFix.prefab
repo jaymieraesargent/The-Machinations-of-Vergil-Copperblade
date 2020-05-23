@@ -280,7 +280,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myQuirk: {fileID: 0}
-  player: {fileID: 0}
+  mySOWeapon: {fileID: 0}
+  player: {fileID: 8592822240495755001}
   myGun: {fileID: 0}
 --- !u!54 &8592822240559394506
 Rigidbody:

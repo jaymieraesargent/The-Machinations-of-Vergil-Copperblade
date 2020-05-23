@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class QuirkAllocation : MonoBehaviour
+public class SOAllocation : MonoBehaviour
 {
     public Quirk myQuirk;
+    public SoWeapon mySOWeapon;
     public Player player;
     public Gun myGun;
 
@@ -22,8 +23,12 @@ public class QuirkAllocation : MonoBehaviour
         player.jetPackPower = myQuirk.playerJetPackPower;
         player.moveSpeed = myQuirk.playerMovementSpeed;
 
-        myGun.maxAmmo = myQuirk.weaponMaxAmmo;
-        myGun.reloadTime = myQuirk.weaponReloadModifier;
+        myGun.maxAmmo = mySOWeapon.weaponMaxUnchangedAmmo + myQuirk.weaponMaxAmmo;
+        myGun.reloadTime = mySOWeapon.weaponReloadTime + myQuirk.weaponReloadModifier;
+        myGun.fireRate = mySOWeapon.weaponFireRate;
+        myGun.range = mySOWeapon.weaponRange;
+        myGun.damage = mySOWeapon.weaponDamage;
+        myGun.weaponName = mySOWeapon.weaponName;
     }
 
 }

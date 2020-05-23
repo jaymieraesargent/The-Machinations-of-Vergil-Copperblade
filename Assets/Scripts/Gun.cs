@@ -5,17 +5,19 @@ using UnityEngine.UI;
 
 public class Gun : MonoBehaviour
 {
-    public float damage = 10f;
-    public float range = 100f;
-    public float fireRate = 15f;
+    public float damage;
+    public float range;
+    public float fireRate;
     public float impaceForce = 50f;
     public float bulletSpeed = 100f;
     public float yAxis;
     public float xAxis;
 
-    public int maxAmmo = 10;
-    public int currentAmmo = 30;
-    public float reloadTime = 1f;
+    public string weaponName;
+
+    public int maxAmmo;
+    public int currentAmmo;
+    public float reloadTime;
     public bool isReloading = false;
     public bool isZoomingIn = false;
     public bool isFiring = false;

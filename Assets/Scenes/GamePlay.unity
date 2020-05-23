@@ -2054,7 +2054,7 @@ Transform:
   - {fileID: 1080271292}
   - {fileID: 779691801}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &502615914
 GameObject:
@@ -3062,7 +3062,7 @@ Transform:
   m_LocalScale: {x: 2.4035163, y: 1, z: 2.3874}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &852130211
 GameObject:
@@ -4692,6 +4692,12 @@ PrefabInstance:
       propertyPath: myQuirk
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1160213170286267195, guid: b9a88d4251ff3574e8a2ba59e340b8c5,
+        type: 3}
+      propertyPath: mySOWeapon
+      value: 
+      objectReference: {fileID: 11400000, guid: 5935315fdd357fe43b5675b77d5779b3,
+        type: 2}
     - target: {fileID: 8592822240295184857, guid: b9a88d4251ff3574e8a2ba59e340b8c5,
         type: 3}
       propertyPath: axes
@@ -4735,7 +4741,7 @@ PrefabInstance:
     - target: {fileID: 8592822240495754997, guid: b9a88d4251ff3574e8a2ba59e340b8c5,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8592822240495754997, guid: b9a88d4251ff3574e8a2ba59e340b8c5,
         type: 3}
@@ -4816,6 +4822,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Constraints
       value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 8592822240601276005, guid: b9a88d4251ff3574e8a2ba59e340b8c5,
+        type: 3}
+      propertyPath: selectedWeapon
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b9a88d4251ff3574e8a2ba59e340b8c5, type: 3}
