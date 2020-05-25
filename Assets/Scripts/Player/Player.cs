@@ -38,6 +38,14 @@ public class Player : MonoBehaviour
         {
             Map.Instance.Respawn(this.gameObject);
         }
+        if(curHealth > maxHealth)
+        {
+            curHealth = maxHealth;
+        }
+        if(currentJetPackFuel > maximumJetPackFuel)
+        {
+            currentJetPackFuel = maximumJetPackFuel;
+        }
         verticalDirection = Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime;
         horizontalDirection = Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime;
         transform.Translate(horizontalDirection, 0, verticalDirection);

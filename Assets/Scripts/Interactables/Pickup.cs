@@ -10,5 +10,7 @@ public class Pickup : ScriptableObject
 
     public float healthRestoration;
     public float jetpackRefuel;
-    public float ammoRestoration;
+    public int ammoRestoration;
+
+    public bool wasPickedUp = false;
 }

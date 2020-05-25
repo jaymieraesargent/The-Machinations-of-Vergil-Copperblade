@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9069326894adc4d4eb8e5e6c71f63190, type: 3}
   m_Name: MedicalKit
   m_EditorClassIdentifier: 
-  pickupType: 
-  pickupObject: {fileID: 0}
-  healthRestoration: 0
+  pickupType: Medical Kit
+  pickupObject: {fileID: 6607525698920666223, guid: a7e71b8b424f20443b4d4850e9492cfa,
+    type: 3}
+  healthRestoration: 20
   jetpackRefuel: 0
   ammoRestoration: 0
+  wasPickedUp: 0

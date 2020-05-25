@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9069326894adc4d4eb8e5e6c71f63190, type: 3}
   m_Name: HealthBottle
   m_EditorClassIdentifier: 
-  pickupType: 
-  pickupObject: {fileID: 0}
-  healthRestoration: 0
+  pickupType: Health Bottle
+  pickupObject: {fileID: -927199367670048503, guid: 6dd628c7674f80b4c83ad0a632b0537c,
+    type: 3}
+  healthRestoration: 10
   jetpackRefuel: 0
   ammoRestoration: 0
+  wasPickedUp: 0
