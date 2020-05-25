@@ -12,9 +12,7 @@ public class Spawner : MonoBehaviour
 
     private void Start()
     {
-        item = true;
-        GameObject temp = Instantiate(prefab, Spawnloaction.transform);
-        timer = cooldown;
+        spawn();
     }
 
     private void Update()
@@ -25,16 +23,23 @@ public class Spawner : MonoBehaviour
         }
         else if (timer <= 0 && !item)
         {
-            GameObject temp = Instantiate(prefab, Spawnloaction.transform);
-            item = true;
+            spawn();
         }
+    }
+
+    public void spawn()
+    {
+        item = true;
+        GameObject temp = Instantiate(prefab, Spawnloaction.transform.position, Spawnloaction.transform.rotation);
+        temp.transform.parent = Spawnloaction.transform;
+        timer = cooldown;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag=="Player" && !item)
+        if(other.tag=="Player" && item)
         {
-            item = true;
+            item = false;
             timer = cooldown;
         }
     }
