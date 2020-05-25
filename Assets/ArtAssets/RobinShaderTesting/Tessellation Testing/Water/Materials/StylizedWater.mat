@@ -82,9 +82,9 @@ Material:
     - _SrcBlend: 1
     - _ToggleSwitch7: 0
     - _UVSec: 0
-    - _VertexDirection: 1
+    - _VertexDirection: 0.78
     - _VoronoiAngleChangeSpeed1: 6
-    - _VoronoiScale1: 10
+    - _VoronoiScale1: 100
     - _ZWrite: 1
     - __dirty: 1
     m_Colors:
