@@ -5,7 +5,6 @@ public class PlayerSelection : MonoBehaviour
     
     public Quirk selectedQuirk;
     public SoWeapon selectedWeapon;
-    public string gameMode;
     
     void Awake()
     {
