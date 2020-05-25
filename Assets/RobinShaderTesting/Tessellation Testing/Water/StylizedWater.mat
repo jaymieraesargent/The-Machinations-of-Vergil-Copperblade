@@ -82,7 +82,7 @@ Material:
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _EdgeLength: 2
+    - _EdgeLength: 27.2
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
@@ -99,7 +99,7 @@ Material:
     - _ToggleSwitch6: 0
     - _ToggleSwitch7: 0
     - _UVSec: 0
-    - _VertexDirection: 0.58
+    - _VertexDirection: 0.19
     - _VoronoiAngleChangeSpeed: 3.17
     - _VoronoiAngleChangeSpeed1: 3.56
     - _VoronoiScale: 200
