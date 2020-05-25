@@ -93,7 +93,8 @@ Shader "StylizedWater"
 			float4 temp_cast_0 = (voroi47).xxxx;
 			float4 Voronoise46 = (( _CustomDisplacementTextureEnable1 )?( tex2Dlod( _DisplacementTexture1, float4( panner43, 0, 0.0) ) ):( temp_cast_0 ));
 			float3 ase_vertexNormal = v.normal.xyz;
-			v.vertex.xyz += ( Voronoise46 * float4( ase_vertexNormal , 0.0 ) * _VertexDirection ).rgb;
+			float Scale71 = _VoronoiScale1;
+			v.vertex.xyz += ( Voronoise46 * float4( ase_vertexNormal , 0.0 ) * ( _VertexDirection * Scale71 ) ).rgb;
 		}
 
 		void surf( Input i , inout SurfaceOutputStandard o )
@@ -118,8 +119,8 @@ Shader "StylizedWater"
 }
 /*ASEBEGIN
 Version=17800
-0;738;1530;381;895.2679;-163.7616;1;True;True
-Node;AmplifyShaderEditor.CommentaryNode;65;-2410.935,-372.584;Inherit;False;1422.052;517.5147;This generates the water pattern with a Voronoi, as well as sliders to control it ;14;48;50;38;49;39;37;40;43;42;41;47;44;45;46;Voronoi//Thanks Jordy ;1,1,1,1;0;0
+0;738;1530;381;2151.837;-46.32205;2.361151;True;True
+Node;AmplifyShaderEditor.CommentaryNode;65;-2410.935,-372.584;Inherit;False;1422.052;517.5147;This generates the water pattern with a Voronoi, as well as sliders to control it ;15;48;50;38;49;39;37;40;43;42;41;47;44;45;46;71;Voronoi//Thanks Jordy ;1,1,1,1;0;0
 Node;AmplifyShaderEditor.RangedFloatNode;48;-2360.935,-322.584;Inherit;False;Property;_VoronoiAngleChangeSpeed1;Voronoi Angle Change Speed;7;0;Create;True;0;0;False;0;6;1.47;1;10;0;1;FLOAT;0
 Node;AmplifyShaderEditor.RangedFloatNode;40;-2074.04,21.20704;Inherit;False;Property;_VoronoiScale1;Voronoi Scale;6;0;Create;True;0;0;False;0;10;5;0;0;0;1;FLOAT;0
 Node;AmplifyShaderEditor.WireNode;37;-2087.899,-242.2551;Inherit;False;1;0;FLOAT;0;False;1;FLOAT;0
@@ -143,15 +144,17 @@ Node;AmplifyShaderEditor.ToggleSwitchNode;56;-1965.688,511.8235;Inherit;True;Pro
 Node;AmplifyShaderEditor.ColorNode;63;-1863.198,308.8486;Inherit;False;Constant;_AlbedoColour;AlbedoColour;13;0;Create;True;0;0;False;0;0,0.7868185,1,0;0,0,0,0;True;0;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
 Node;AmplifyShaderEditor.SimpleMultiplyOpNode;57;-1605.748,533.8677;Inherit;False;2;2;0;COLOR;0,0,0,0;False;1;COLOR;0,0,0,0;False;1;COLOR;0
 Node;AmplifyShaderEditor.SimpleAddOpNode;58;-1599.161,439.9858;Inherit;False;2;2;0;COLOR;0,0,0,0;False;1;COLOR;0,0,0,0;False;1;COLOR;0
+Node;AmplifyShaderEditor.CommentaryNode;67;-632.8741,260.1666;Inherit;False;643.473;489.2985;Comment;6;68;52;69;35;70;72;Vertex Offset Input ;1,1,1,1;0;0
+Node;AmplifyShaderEditor.RegisterLocalVarNode;71;-1814.034,68.40979;Inherit;False;Scale;-1;True;1;0;FLOAT;0;False;1;FLOAT;0
+Node;AmplifyShaderEditor.GetLocalVarNode;70;-551.4835,632.8428;Inherit;False;71;Scale;1;0;OBJECT;;False;1;FLOAT;0
 Node;AmplifyShaderEditor.ToggleSwitchNode;59;-1462.813,443.3248;Inherit;True;Property;_ToggleSwitch7;Toggle Switch6;13;0;Create;True;0;0;False;0;0;2;0;COLOR;0,0,0,0;False;1;COLOR;0,0,0,0;False;1;COLOR;0
-Node;AmplifyShaderEditor.CommentaryNode;67;-632.8741,260.1666;Inherit;False;643.473;489.2985;Comment;5;68;52;69;35;70;Vertex Offset Input ;1,1,1,1;0;0
+Node;AmplifyShaderEditor.RangedFloatNode;52;-606.0385,540.444;Inherit;False;Property;_VertexDirection;Vertex Direction ;0;0;Create;True;0;0;False;0;0;0;0;1;0;1;FLOAT;0
 Node;AmplifyShaderEditor.RegisterLocalVarNode;60;-1238.308,445.2418;Inherit;False;Albedo;-1;True;1;0;COLOR;0,0,0,0;False;1;COLOR;0
 Node;AmplifyShaderEditor.GetLocalVarNode;35;-601.4998,307.3636;Inherit;False;46;Voronoise;1;0;OBJECT;;False;1;COLOR;0
 Node;AmplifyShaderEditor.NormalVertexDataNode;69;-607.4183,389.0858;Inherit;False;0;5;FLOAT3;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
-Node;AmplifyShaderEditor.RangedFloatNode;52;-606.0385,540.444;Inherit;False;Property;_VertexDirection;Vertex Direction ;0;0;Create;True;0;0;False;0;0;0;0;1;0;1;FLOAT;0
-Node;AmplifyShaderEditor.GetLocalVarNode;64;-248.4808,-28.12284;Inherit;False;60;Albedo;1;0;OBJECT;;False;1;COLOR;0
+Node;AmplifyShaderEditor.SimpleMultiplyOpNode;72;-305.3677,602.0018;Inherit;False;2;2;0;FLOAT;0;False;1;FLOAT;0;False;1;FLOAT;0
 Node;AmplifyShaderEditor.SimpleMultiplyOpNode;68;-280.3846,371.4988;Inherit;False;3;3;0;COLOR;0,0,0,0;False;1;FLOAT3;0,0,0;False;2;FLOAT;0;False;1;COLOR;0
-Node;AmplifyShaderEditor.GetLocalVarNode;70;-547.4835,363.8428;Inherit;False;-1;;1;0;OBJECT;;False;1;OBJECT;0
+Node;AmplifyShaderEditor.GetLocalVarNode;64;-248.4808,-28.12284;Inherit;False;60;Albedo;1;0;OBJECT;;False;1;COLOR;0
 Node;AmplifyShaderEditor.StandardSurfaceOutputNode;0;0,0;Float;False;True;-1;6;ASEMaterialInspector;0;0;Standard;StylizedWater;False;False;False;False;False;False;False;False;False;False;False;False;False;False;True;False;False;False;False;False;False;Back;0;False;-1;0;False;-1;False;0;False;-1;0;False;-1;False;0;Transparent;0.5;True;True;0;False;Transparent;;Transparent;All;14;all;True;True;True;True;0;False;-1;False;0;False;-1;255;False;-1;255;False;-1;0;False;-1;0;False;-1;0;False;-1;0;False;-1;0;False;-1;0;False;-1;0;False;-1;0;False;-1;True;2;15;10;25;False;0.5;True;2;5;False;-1;10;False;-1;0;0;False;-1;0;False;-1;0;False;-1;0;False;-1;0;False;0;0,0,0,0;VertexOffset;True;False;Cylindrical;False;Relative;0;;-1;-1;-1;1;0;False;0;0;False;-1;-1;0;False;-1;0;0;0;False;0.1;False;-1;0;False;-1;16;0;FLOAT3;0,0,0;False;1;FLOAT3;0,0,0;False;2;FLOAT3;0,0,0;False;3;FLOAT;0;False;4;FLOAT;0;False;5;FLOAT;0;False;6;FLOAT3;0,0,0;False;7;FLOAT3;0,0,0;False;8;FLOAT;0;False;9;FLOAT;0;False;10;FLOAT;0;False;13;FLOAT3;0,0,0;False;11;FLOAT3;0,0,0;False;12;FLOAT3;0,0,0;False;14;FLOAT4;0,0,0,0;False;15;FLOAT3;0,0,0;False;0
 WireConnection;37;0;48;0
 WireConnection;41;0;40;0
@@ -177,13 +180,16 @@ WireConnection;57;0;63;0
 WireConnection;57;1;56;0
 WireConnection;58;0;63;0
 WireConnection;58;1;56;0
+WireConnection;71;0;40;0
 WireConnection;59;0;58;0
 WireConnection;59;1;57;0
 WireConnection;60;0;59;0
+WireConnection;72;0;52;0
+WireConnection;72;1;70;0
 WireConnection;68;0;35;0
 WireConnection;68;1;69;0
-WireConnection;68;2;52;0
+WireConnection;68;2;72;0
 WireConnection;0;0;64;0
 WireConnection;0;11;68;0
 ASEEND*/
-//CHKSM=8877AF4B4B50570ACF8CFBEC1C218E3EC1B85C47
+//CHKSM=D4E195D2AE6F0AC7238AAF9A6241C1AAB54003FA
