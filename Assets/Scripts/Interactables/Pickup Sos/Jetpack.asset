@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9069326894adc4d4eb8e5e6c71f63190, type: 3}
   m_Name: Jetpack
   m_EditorClassIdentifier: 
-  pickupType: 
+  pickupType: Jetpack
   pickupObject: {fileID: 0}
   healthRestoration: 0
-  jetpackRefuel: 0
+  jetpackRefuel: 20
   ammoRestoration: 0
+  wasPickedUp: 0

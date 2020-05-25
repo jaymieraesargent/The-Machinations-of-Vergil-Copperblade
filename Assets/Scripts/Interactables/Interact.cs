@@ -4,15 +4,24 @@ using UnityEngine;
 
 public class Interact : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public Pickup thisPickup;
+    public Player playerInteract;
+    public Gun gunInteract;
+
+    private void OnTriggerEnter(Collider player)
     {
-        
+        playerInteract = player.GetComponent<Player>();
+        gunInteract = player.GetComponentInChildren<Gun>();
+        playerInteract.curHealth += thisPickup.healthRestoration;
+        playerInteract.currentJetPackFuel += thisPickup.jetpackRefuel;
+        gunInteract.currentAmmo += thisPickup.ammoRestoration;
+        PickUpThis();
     }
 
-    // Update is called once per frame
-    void Update()
+    void PickUpThis()
     {
-        
+        thisPickup.wasPickedUp = true;
+
+        Destroy(this);
     }
 }
