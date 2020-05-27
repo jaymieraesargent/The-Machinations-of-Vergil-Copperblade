@@ -30,6 +30,25 @@ public class Player : MonoBehaviour
     public int team;
 
     public string myQuirkName;
+    [SerializeField]
+    public bool IsGrounded
+    {
+        get
+        {
+            float DisstanceToTheGround = GetComponent<Collider>().bounds.extents.y;
+            RaycastHit hit; 
+            if(Physics.Raycast(transform.position, Vector3.down, out hit, DisstanceToTheGround + 0.1f))
+            {
+                if(hit.transform.tag=="Ground")
+                {
+                    return true;
+                }
+            }
+
+
+            return false;
+        }
+    }
 
     void Update()
     {
@@ -64,7 +83,9 @@ public class Player : MonoBehaviour
 
             if (currentJetPackFuel <= 0)
             {
-                if (rigid != null)
+                float DisstanceToTheGround = GetComponent<Collider>().bounds.extents.y;
+                
+                if (rigid != null && IsGrounded)
                 {
                     rigid.AddForce(transform.up * jumpSpeed, ForceMode.Impulse);
                 }
