@@ -8,7 +8,10 @@ public class NetworkGamePlayer : NetworkBehaviour
 
     [SyncVar]
     public string displayName = "Loading...";
-        
+    public SoWeapon selectedWeapon;
+    public Quirk selectedQuirk;
+    public float skillLevel;
+
     private NetworkManagerLobby room;
 
     private NetworkManagerLobby Room
