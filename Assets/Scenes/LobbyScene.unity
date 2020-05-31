@@ -1283,10 +1283,11 @@ MonoBehaviour:
   menuScene: Assets/Scenes/LobbyScene.unity
   roomPlayerPrefab: {fileID: -7426108963799244640, guid: 8ca0bd3b483d29c44a9fd3f351c27427,
     type: 3}
-  gameMode: 
+  gameMode: {fileID: 0}
   gamePlayerPrefab: {fileID: 8264865988464755608, guid: 0ceb58a762f9013478e072ee5ce93bda,
     type: 3}
-  playerSpawnSystem: {fileID: 0}
+  playerSpawnSystem: {fileID: 5771477031868545830, guid: 3c5ee3b7ca0a70249b909d2a50b2e766,
+    type: 3}
 --- !u!1 &680103215
 GameObject:
   m_ObjectHideFlags: 0
@@ -2309,10 +2310,10 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 36603143}
         m_MethodName: HostLobby
-        m_Mode: 5
+        m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: GameMode, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: FFA
@@ -2366,7 +2367,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bc42a0957f36ed498658eb905f9a781, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  teamAmmount: 2
+  world: {fileID: 0}
   teams: []
   spawnPoints: []
 --- !u!1 &1421317066

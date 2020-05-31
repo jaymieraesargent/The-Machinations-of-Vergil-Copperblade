@@ -15,7 +15,7 @@ public class NetworkManagerLobby : NetworkManager
     [SerializeField] private NetworkLobbyPlayer roomPlayerPrefab = null;
 
     [Header("Game")]
-    public string gameMode;
+    public GameMode gameMode;
     [SerializeField] private NetworkGamePlayer gamePlayerPrefab;
     [SerializeField] private GameObject playerSpawnSystem;
 
