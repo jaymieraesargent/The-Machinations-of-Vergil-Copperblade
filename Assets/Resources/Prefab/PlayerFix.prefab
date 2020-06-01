@@ -9,8 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7700049350849552003}
+  - component: {fileID: 8901067570634886586}
   m_Layer: 0
-  m_Name: Pistol
+  m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,6 +31,44 @@ Transform:
   m_Father: {fileID: 8592822240601276004}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8901067570634886586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2182756218827275159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ac3781f78c9ffc42b87391256c64c65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 0
+  range: 0
+  fireRate: 0
+  impaceForce: 50
+  bulletSpeed: 100
+  yAxis: 0
+  xAxis: 0
+  weaponName: 
+  maxAmmo: 0
+  currentAmmo: 0
+  reloadTime: 0
+  isReloading: 0
+  isZoomingIn: 0
+  isFiring: 0
+  fpsCam: {fileID: 0}
+  muzzleFlash: {fileID: 0}
+  gunShots: {fileID: 0}
+  reloadSound: {fileID: 0}
+  impactEffect: {fileID: 0}
+  bulletShell: {fileID: 0}
+  firePoint: {fileID: 0}
+  bullet: {fileID: 0}
+  myBullet: {fileID: 0}
+  bulletHole: {fileID: 0}
+  ammoCount: {fileID: 0}
+  anim: {fileID: 0}
 --- !u!1 &5310165634386491902
 GameObject:
   m_ObjectHideFlags: 0
