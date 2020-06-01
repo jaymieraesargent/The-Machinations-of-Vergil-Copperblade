@@ -5,10 +5,10 @@ using UnityEngine;
 public class GameMode : MonoBehaviour
 {
     //set up
-    public int teamAmmount = 2;
+    public int numberOfTeams = 2;
+    public int numberOfPlayers;
 
-
-    public List<Team> teams;
+    public List<Team> teams = new List<Team>();
     public List<Transform> spawnPoints;
 
     protected void Start()
@@ -19,7 +19,7 @@ public class GameMode : MonoBehaviour
 
     public void SetUpGame()
     {
-        for(int teamID = 0; teamID < teamAmmount; teamID++)
+        for(int teamID = 0; teamID < numberOfTeams; teamID++)
         {
             teams.Add(new Team());
         }

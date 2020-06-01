@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44877613, g: 0.49883336, b: 0.5756913, a: 1}
+  m_IndirectSpecularColor: {r: 0.4487759, g: 0.49883306, b: 0.57569075, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3542,7 +3542,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c72f5cc69d3852e4d829da5fc2210070, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  teamAmmount: 2
+  numberOfTeams: 2
+  numberOfPlayers: 0
   teams: []
   spawnPoints: []
 --- !u!4 &1416993449
@@ -3739,6 +3740,44 @@ MonoBehaviour:
   isWeaponDropable: 0
   worldWeaponGameObject: {fileID: 1466228029}
   originalLocation: {x: 0, y: 0, z: 0}
+--- !u!114 &1466228032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1466228029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ac3781f78c9ffc42b87391256c64c65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 0
+  range: 0
+  fireRate: 0
+  impaceForce: 50
+  bulletSpeed: 100
+  yAxis: 0
+  xAxis: 0
+  weaponName: 
+  maxAmmo: 0
+  currentAmmo: 0
+  reloadTime: 0
+  isReloading: 0
+  isZoomingIn: 0
+  isFiring: 0
+  fpsCam: {fileID: 0}
+  muzzleFlash: {fileID: 0}
+  gunShots: {fileID: 0}
+  reloadSound: {fileID: 0}
+  impactEffect: {fileID: 0}
+  bulletShell: {fileID: 0}
+  firePoint: {fileID: 0}
+  bullet: {fileID: 0}
+  myBullet: {fileID: 0}
+  bulletHole: {fileID: 0}
+  ammoCount: {fileID: 0}
+  anim: {fileID: 0}
 --- !u!1 &1470827785
 GameObject:
   m_ObjectHideFlags: 0
