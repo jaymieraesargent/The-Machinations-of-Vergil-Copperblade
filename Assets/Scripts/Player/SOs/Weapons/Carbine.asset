@@ -15,7 +15,8 @@ MonoBehaviour:
   weaponName: Henrietta's Carbine
   weaponDescription: Some bs goes here
   weaponIcon: {fileID: 21300000, guid: e549de6c0acae564bb15efc77425fee3, type: 3}
-  weaponPrefab: {fileID: 0}
+  weaponPrefab: {fileID: 5105608760095437071, guid: 49f9108bd3ce47d44995c080db97d775,
+    type: 3}
   weaponDamage: 8
   weaponRange: 60
   weaponFireRate: 8

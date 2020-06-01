@@ -23,18 +23,18 @@ public class Gun : MonoBehaviour
     public bool isFiring = false;
 
     public Camera fpsCam;
-    public ParticleSystem muzzleFlash;
-    public AudioSource gunShots;
-    public AudioSource reloadSound;
-    public GameObject impactEffect;
-    public Transform bulletShell;
-    public Transform firePoint;
-    public GameObject bullet;
-    public GameObject myBullet;
-    public GameObject bulletHole;
+   // public ParticleSystem muzzleFlash;
+  //  public AudioSource gunShots;
+   // public AudioSource reloadSound;
+   // public GameObject impactEffect;
+   // public Transform bulletShell;
+   // public Transform firePoint;
+  //  public GameObject bullet;
+   // public GameObject myBullet;
+   // public GameObject bulletHole;
     public Text ammoCount;
 
-    public Animator anim; 
+  //  public Animator anim; 
 
     private float nextTimeToFire = 0f;
 
@@ -57,7 +57,7 @@ public class Gun : MonoBehaviour
     void OnEnable()
     {
         isReloading = false;
-        anim.SetBool("Reloading", false);
+     //   anim.SetBool("Reloading", false);
     }
 
     void Update()
@@ -75,15 +75,15 @@ public class Gun : MonoBehaviour
                 StartCoroutine(Reload());
             }
         }
-        if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire)
+        if (Input.GetMouseButton(0) && Time.time >= nextTimeToFire)
         {
             nextTimeToFire = Time.time + 1f / fireRate;
             isFiring = true;
             Shoot();
         }
-        else if(Input.GetButtonUp("Fire1"))
+        else if(Input.GetMouseButtonUp(0))
         {
-            anim.SetBool("Firing", false);
+     //       anim.SetBool("Firing", false);
             isFiring = false;
         }
         Zoom();
@@ -95,12 +95,12 @@ public class Gun : MonoBehaviour
     {
         //was running this on button press....but the Reload was constantly waiting....SO WE MOVED IT
         isReloading = true;
-        reloadSound.Play();
-        anim.SetBool("ZoomIn", false);
+     //   reloadSound.Play();
+   //     anim.SetBool("ZoomIn", false);
         Debug.Log("Reloading...");
-        anim.SetBool("Reloading", true);
+     //   anim.SetBool("Reloading", true);
         yield return new WaitForSeconds(reloadTime - .25f);
-        anim.SetBool("Reloading", false);
+       // anim.SetBool("Reloading", false);
         yield return new WaitForSeconds(.25f);
         currentAmmo = maxAmmo;
         ammoCount.text = currentAmmo.ToString();
@@ -114,14 +114,14 @@ public class Gun : MonoBehaviour
             player.isZoomedIn = true;
             isZoomingIn = true;
             Debug.Log("Zoom in weapon");
-            anim.SetBool("ZoomIn", true);
+      //      anim.SetBool("ZoomIn", true);
             fpsCam.fieldOfView = 30.0f;
         }
         else
         {
             player.isZoomedIn = false;
             isZoomingIn = false;
-            anim.SetBool("ZoomIn", false);
+       //     anim.SetBool("ZoomIn", false);
             fpsCam.fieldOfView = 60.0f;
         }
     }
@@ -130,11 +130,11 @@ public class Gun : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.W))
         {
-            anim.SetBool("Walk", true);
+      //      anim.SetBool("Walk", true);
         }
         else
         {
-            anim.SetBool("Walk", false);
+      //      anim.SetBool("Walk", false);
         }
     }
     //PEW PEW WAS RUNNING INTO NEGATIVES COS OLD MATE FORGOT A CAP!
@@ -143,8 +143,8 @@ public class Gun : MonoBehaviour
         //Added the ability to not go below Zero...YEEEE BOI!
         if (currentAmmo > 0)
         {
-            gunShots.Play();
-            muzzleFlash.Play();
+        //    gunShots.Play();
+         //   muzzleFlash.Play();
             currentAmmo--;
 
             if (ammoCount != null)
@@ -157,11 +157,13 @@ public class Gun : MonoBehaviour
                 if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
                 {
                     Debug.Log(hit.transform.name);
+                    CharactetController targetPlayer = hit.collider.GetComponent<CharactetController>();
+                    targetPlayer.DamagePlayer(damage);
 
-                    GameObject impactGO = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
-                    Destroy(impactGO, 2f);
+             //       GameObject impactGO = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
+               //     Destroy(impactGO, 2f);
                     var hitRotation = Quaternion.FromToRotation(Vector3.up, hit.normal);
-                    Instantiate(bulletHole, hit.point, hitRotation);
+               //     Instantiate(bulletHole, hit.point, hitRotation);
                 }
             }
             else
@@ -169,16 +171,22 @@ public class Gun : MonoBehaviour
                 Vector2 RandomShot = new Vector2(Random.Range(xAxis, yAxis), Random.Range(xAxis, yAxis));
                 if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward + new Vector3(RandomShot.x, RandomShot.y, 0), out hit, range))
                 {
-                    GameObject impactGO = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
-                    Destroy(impactGO, 2f);
+                    Player targetPlayer = hit.collider.GetComponent<Player>();
+                    if (targetPlayer != null)
+                    {
+                        targetPlayer.DamagePlayer(damage);
+                    }
+
+             //       GameObject impactGO = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
+             //       Destroy(impactGO, 2f);
                     var hitRotation = Quaternion.FromToRotation(Vector3.up, hit.normal);
-                    Instantiate(bulletHole, hit.point, hitRotation);
+            //        Instantiate(bulletHole, hit.point, hitRotation);
                 }
             }
         }
         else
         {
-            anim.SetBool("Firing", false);
+        //    anim.SetBool("Firing", false);
         }
     }
 }

@@ -12,7 +12,7 @@ public class SOAllocation : MonoBehaviour
     void Start()
     {
         player = this.gameObject.GetComponent<Player>();
-        myGun = player.gameObject.GetComponentInChildren<Gun>();
+        myGun = this.gameObject.GetComponentInChildren<Gun>();
 
         player.myQuirkName = myQuirk.quirkName;
         player.maxHealth = myQuirk.playerMaxHealth;
@@ -29,6 +29,7 @@ public class SOAllocation : MonoBehaviour
         myGun.range = mySOWeapon.weaponRange;
         myGun.damage = mySOWeapon.weaponDamage;
         myGun.weaponName = mySOWeapon.weaponName;
+        myGun.fpsCam = player.GetComponentInChildren<Camera>();
     }
 
 }
