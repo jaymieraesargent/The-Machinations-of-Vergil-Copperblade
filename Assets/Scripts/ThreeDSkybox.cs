@@ -17,6 +17,7 @@ public class ThreeDSkybox : MonoBehaviour
         else if(Camera.main==true)
         {
             Playercamera = Camera.main.gameObject;
+            Camera.main.clearFlags = CameraClearFlags.Depth;
         }
     }
 }

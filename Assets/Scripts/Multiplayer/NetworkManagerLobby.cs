@@ -15,6 +15,7 @@ public class NetworkManagerLobby : NetworkManager
     [SerializeField] private NetworkLobbyPlayer roomPlayerPrefab = null;
 
     [Header("Game")]
+    public GameMode gameMode;
     [SerializeField] private NetworkGamePlayer gamePlayerPrefab;
     [SerializeField] private GameObject playerSpawnSystem;
 
@@ -148,7 +149,7 @@ public class NetworkManagerLobby : NetworkManager
                 return;
             }
 
-            ServerChangeScene("Game_Map_02");
+            ServerChangeScene("GamePlay");
         }
     }
 
@@ -156,13 +157,16 @@ public class NetworkManagerLobby : NetworkManager
     {
         //from menu to game
 
-        if(SceneManager.GetActiveScene().path == menuScene && newSceneName.StartsWith("Game_Map"))
+        if(SceneManager.GetActiveScene().path == menuScene && newSceneName.StartsWith("GamePlay"))
         {
             for (int i = RoomPlayers.Count - 1; i >= 0; i--)
             {
                 var conn = RoomPlayers[i].connectionToClient;
                 NetworkGamePlayer gamePlayerInstance = Instantiate(gamePlayerPrefab);
                 gamePlayerInstance.SetDisplayName(RoomPlayers[i].DisplayName);
+                gamePlayerInstance.skillLevel = RoomPlayers[i].skillLevel;
+                gamePlayerInstance.selectedQuirk = RoomPlayers[i].selectedQuirk;
+                gamePlayerInstance.selectedWeapon = RoomPlayers[i].selectedWeapon;
 
                 NetworkServer.Destroy(conn.identity.gameObject);
 

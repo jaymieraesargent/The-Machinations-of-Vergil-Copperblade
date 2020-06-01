@@ -7,6 +7,7 @@ TagManager:
   - Metal
   - Target
   - ExplosiveBarrel
+  - Ground
   layers:
   - Default
   - TransparentFX
@@ -18,7 +19,7 @@ TagManager:
   - 
   - Player 1 gun
   - Skybox
-  - 
+  - Player
   - 
   - 
   - 

@@ -14,17 +14,18 @@ public class LobbyMenu : MonoBehaviour
     {
         if(networkManager == null)
         {
-            Debug.LogError("networkManager not attached to main menu");
+            Debug.LogError("networkManager not attached to lobby menu");
         }
 
         if(landingPagePanel == null)
         {
-            Debug.LogError("landingPagePanel not attached to main menu");
+            Debug.LogError("landingPagePanel not attached to lobby menu");
         }
     }
 
-    public void HostLobby()
+    public void HostLobby(GameMode gameMode)
     {
+        networkManager.gameMode = gameMode;
         networkManager.StartHost();
 
         landingPagePanel.SetActive(false);
