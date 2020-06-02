@@ -57,10 +57,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 5771477031868545830}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ebbb65efc7906148a9d2a2f1b87fd28, type: 3}
+  m_Script: {fileID: 11500000, guid: 38c447de93f12bf41a8babea7198cca5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
-  playerPrefab: {fileID: 8592822240495755007, guid: b9a88d4251ff3574e8a2ba59e340b8c5,
+  playerPrefab: {fileID: 8592822240495755007, guid: 44822139ec67c0a4a8378199380ed41f,
     type: 3}

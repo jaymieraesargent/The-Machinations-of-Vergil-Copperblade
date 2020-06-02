@@ -14,8 +14,6 @@ public class NetworkLobbyPlayer : NetworkBehaviour
     [SerializeField] private Button startGameButton = null;
     [SerializeField] private TMP_Text gameTitle = null;
 
-
-
     private string PlayerSkillKey = "PlayerSkill";
 
     [Header("Player")]
@@ -23,9 +21,14 @@ public class NetworkLobbyPlayer : NetworkBehaviour
     public string DisplayName = "Loading...";
     [SyncVar(hook = nameof(HandleReadyStatusChanged))]
     public bool IsReady = false;
+    
+    public string SelectedWeaponStr;   
+    public string SelectedQuirkStr;
 
-    public SoWeapon selectedWeapon;
-    public Quirk selectedQuirk;
+    public SoWeapon SelectedWeapon;
+    public Quirk SelectedQuirk;
+    
+    [SyncVar]
     public float skillLevel;
     [SerializeField] private bool isLeader = false;
 
@@ -62,21 +65,31 @@ public class NetworkLobbyPlayer : NetworkBehaviour
     public override void OnStartAuthority()
     {
         CmdSetDisplayName(SelectionScreen.DisplayName);
-        lobbyUI.SetActive(true);
-        gameTitle.text = "Game Lobby : " + Room.gameMode;
+        lobbyUI.SetActive(true);        
 
         //Get skill if played before or set player at skill default level 1 (float)
         if (PlayerPrefs.HasKey(PlayerSkillKey))
             skillLevel = PlayerPrefs.GetFloat(PlayerSkillKey);
         else
+        {
             PlayerPrefs.SetFloat(PlayerSkillKey, 1f);
+            skillLevel = 1f;
+        }
 
+        //Set Selected Quirk & Weapon SOs
+        
+        CmdSetSOs(SelectionScreen.SelectedQuirk.quirkName, SelectionScreen.SelectedWeapon.weaponName);
+        //selectedQuirk = SelectionScreen.SelectedQuirk;
+        //selectedWeapon = SelectionScreen.SelectedWeapon;
     }
+       
 
     public override void OnStartClient()
     {
         Room.RoomPlayers.Add(this);
         UpdateDisplay();
+
+        
     }
 
     public override void OnNetworkDestroy()
@@ -102,6 +115,8 @@ public class NetworkLobbyPlayer : NetworkBehaviour
 
     private void UpdateDisplay()
     {
+        
+
         if (!isLocalPlayer)
         {
             foreach (var player in Room.RoomPlayers)
@@ -115,6 +130,8 @@ public class NetworkLobbyPlayer : NetworkBehaviour
 
             return;
         }
+
+        //gameTitle.text = "Game Lobby : " + Room.gameMode.name;
 
         for (int i = 0; i < playerNameTexts.Length; i++)
         {
@@ -143,6 +160,20 @@ public class NetworkLobbyPlayer : NetworkBehaviour
     private void CmdSetDisplayName(string displayName)
     {
         DisplayName = displayName;
+    }
+
+    //[Command]
+    //private void CmdSetSOs(Quirk selectedQuirk, SoWeapon selectedWeapon)
+    //{
+    //    SelectedWeapon = selectedWeapon;
+    //    SelectedQuirk = selectedQuirk;
+    //}
+
+    [Command]
+    private void CmdSetSOs(string selectedQuirk, string selectedWeapon)
+    {
+        SelectedWeaponStr = selectedWeapon;
+        SelectedQuirkStr = selectedQuirk;
     }
 
     [Command]

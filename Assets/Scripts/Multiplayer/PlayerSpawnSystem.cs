@@ -9,7 +9,20 @@ public class PlayerSpawnSystem : NetworkBehaviour
     [SerializeField] private GameObject playerPrefab = null;
     private static List<Transform> spawnPoints = new List<Transform>();
     private int nextIndex = 0;
-    
+
+    private NetworkManagerLobby room;
+    private NetworkManagerLobby Room
+    {
+        get
+        {
+            if (room != null)
+            {
+                return room;
+            }
+            room = NetworkManager.singleton as NetworkManagerLobby;
+            return room;
+        }
+    }
 
     public static void AddSpawnPoint(Transform spawnTransform)
     {
@@ -43,6 +56,18 @@ public class PlayerSpawnSystem : NetworkBehaviour
         }
 
         GameObject playerInstance = Instantiate(playerPrefab, spawnPoint.position, spawnPoint.rotation);
+
+        // setup player with lobby weapon/quirk choices
+        foreach (var player in Room.GamePlayers)
+        {
+            
+            if (player.hasAuthority)
+            {
+                playerInstance.GetComponent<SOAllocation>().mySOWeapon = player.selectedWeapon;
+                playerInstance.GetComponent<SOAllocation>().myQuirk = player.selectedQuirk;
+            }
+        }
+
         NetworkServer.Spawn(playerInstance, conn);
 
         nextIndex++;

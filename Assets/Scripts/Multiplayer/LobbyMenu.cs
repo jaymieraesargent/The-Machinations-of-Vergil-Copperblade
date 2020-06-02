@@ -23,7 +23,7 @@ public class LobbyMenu : MonoBehaviour
         }
     }
 
-    public void HostLobby(GameMode gameMode)
+    public void HostLobby(GameObject gameMode)
     {
         networkManager.gameMode = gameMode;
         networkManager.StartHost();

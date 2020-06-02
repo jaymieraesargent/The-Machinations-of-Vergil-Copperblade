@@ -18,7 +18,7 @@ public class SelectionScreen : MonoBehaviour
     [SerializeField] private SoWeapon[] availableWeapons;
 
     //Player Selections
-    public static SoWeapon SelectedWeapon { get; private set; }    
+    public static SoWeapon SelectedWeapon { get; private set; }
     public static Quirk SelectedQuirk { get; private set; }
     public static string DisplayName { get; private set; }
 
@@ -66,6 +66,7 @@ public class SelectionScreen : MonoBehaviour
                 if (PlayerPrefs.GetString(PlayerPrefsQuirkKey) == quirk.quirkName)
                 {
                     tempQuirkPanel.GetComponent<QuirkSelectPanel>().SetSelected();
+                    SelectedQuirk = quirk;
                 }
             }
         }
@@ -84,6 +85,7 @@ public class SelectionScreen : MonoBehaviour
                 if (PlayerPrefs.GetString(PlayerPrefsWeaponKey) == weapon.weaponName)
                 {
                     tempWeaponPanel.GetComponent<WeaponSelectPanel>().SetSelected();
+                    SelectedWeapon = weapon;
                 }
             }
         }

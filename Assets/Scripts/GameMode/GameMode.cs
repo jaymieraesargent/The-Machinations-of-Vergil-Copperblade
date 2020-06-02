@@ -6,7 +6,6 @@ public class GameMode : MonoBehaviour
 {
     //set up
     //public int teamAmmount = 2;
-    public GameObject world;
 
     public List<Team> teams;
     public List<Transform> spawnPoints;

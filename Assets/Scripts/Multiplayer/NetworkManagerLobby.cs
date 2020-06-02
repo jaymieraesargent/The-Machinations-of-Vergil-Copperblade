@@ -15,7 +15,7 @@ public class NetworkManagerLobby : NetworkManager
     [SerializeField] private NetworkLobbyPlayer roomPlayerPrefab = null;
 
     [Header("Game")]
-    public GameMode gameMode;
+    public GameObject gameMode;
     [SerializeField] private NetworkGamePlayer gamePlayerPrefab;
     [SerializeField] private GameObject playerSpawnSystem;
 
@@ -78,9 +78,10 @@ public class NetworkManagerLobby : NetworkManager
         {
             bool isLeader = RoomPlayers.Count == 0;
 
-
             NetworkLobbyPlayer roomPlayerInstance = Instantiate(roomPlayerPrefab);
             roomPlayerInstance.IsLeader = isLeader;
+            //roomPlayerInstance.SelectedWeapon = SelectionScreen.SelectedWeapon;
+            //roomPlayerInstance.SelectedQuirk = SelectionScreen.SelectedQuirk;
             NetworkServer.AddPlayerForConnection(conn, roomPlayerInstance.gameObject);
         }
     }
@@ -165,8 +166,8 @@ public class NetworkManagerLobby : NetworkManager
                 NetworkGamePlayer gamePlayerInstance = Instantiate(gamePlayerPrefab);
                 gamePlayerInstance.SetDisplayName(RoomPlayers[i].DisplayName);
                 gamePlayerInstance.skillLevel = RoomPlayers[i].skillLevel;
-                gamePlayerInstance.selectedQuirk = RoomPlayers[i].selectedQuirk;
-                gamePlayerInstance.selectedWeapon = RoomPlayers[i].selectedWeapon;
+                gamePlayerInstance.selectedQuirk = RoomPlayers[i].SelectedQuirk;
+                gamePlayerInstance.selectedWeapon = RoomPlayers[i].SelectedWeapon;
 
                 NetworkServer.Destroy(conn.identity.gameObject);
 
@@ -179,7 +180,7 @@ public class NetworkManagerLobby : NetworkManager
 
     public override void OnServerSceneChanged(string sceneName)
     {
-        if (sceneName.StartsWith("Game_Map"))
+        if (sceneName.StartsWith("GamePlay"))
         {
             GameObject playerSpawnSystemInstance = Instantiate(playerSpawnSystem);
             //could pass networkmanagerlobby here instead of using static method

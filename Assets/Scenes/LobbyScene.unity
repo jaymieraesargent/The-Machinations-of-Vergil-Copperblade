@@ -1286,7 +1286,7 @@ MonoBehaviour:
   gameMode: {fileID: 0}
   gamePlayerPrefab: {fileID: 8264865988464755608, guid: 0ceb58a762f9013478e072ee5ce93bda,
     type: 3}
-  playerSpawnSystem: {fileID: 5771477031868545830, guid: 3c5ee3b7ca0a70249b909d2a50b2e766,
+  playerSpawnSystem: {fileID: 5771477031868545830, guid: 983937c9448f8da4db4bc98cb5068517,
     type: 3}
 --- !u!1 &680103215
 GameObject:
@@ -1323,7 +1323,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 48.29995, y: 200}
+  m_AnchoredPosition: {x: 48.30005, y: 200}
   m_SizeDelta: {x: -371.5, y: 360.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &680103217
@@ -2051,10 +2051,11 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 36603143}
         m_MethodName: HostLobby
-        m_Mode: 5
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 4505914606601160698, guid: 8fc8fd86d6c39de499fe7327f47a0875,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: CTF
@@ -2239,7 +2240,7 @@ GameObject:
   - component: {fileID: 1349677957}
   - component: {fileID: 1349677960}
   m_Layer: 5
-  m_Name: Button_HostGame
+  m_Name: Button_HostFFAGame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2312,8 +2313,9 @@ MonoBehaviour:
         m_MethodName: HostLobby
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: GameMode, Assembly-CSharp
+          m_ObjectArgument: {fileID: 4505914606601160698, guid: a62d779b3bea9f34d8c17029cf72c747,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: FFA
@@ -2367,7 +2369,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bc42a0957f36ed498658eb905f9a781, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  world: {fileID: 0}
   teams: []
   spawnPoints: []
 --- !u!1 &1421317066
@@ -3622,6 +3623,8 @@ MonoBehaviour:
   availableQuirks:
   - {fileID: 11400000, guid: e9887630c9e57d545a17648fe54845c7, type: 2}
   - {fileID: 11400000, guid: c07a8654e6c6e0a4288bea575e612bc6, type: 2}
+  - {fileID: 11400000, guid: 40d9318b2e94d144a80ba0cfbafb4a5c, type: 2}
+  - {fileID: 11400000, guid: 7a307d70fa0707e4aac2c8b80275faf1, type: 2}
   availableWeapons:
   - {fileID: 11400000, guid: 72bde6cff0001bb4983e03e9d5abbef8, type: 2}
   - {fileID: 11400000, guid: facfbf396082da0468404d4e8c613a61, type: 2}
