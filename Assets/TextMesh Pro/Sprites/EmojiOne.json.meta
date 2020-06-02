@@ -1,11 +1,8 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
-guid: 185e87e7d1d7c224c987f98d3dfad1ed
-=======
-guid: 44ccc30e112cdf542b2f270aebc48503
->>>>>>> 9a8abb9fa9d42b5709514e5796f2b110d5400703
+guid: 8f05276190cf498a8153f6cbe761d4e6
+timeCreated: 1480316860
+licenseType: Pro
 TextScriptImporter:
-  externalObjects: {}
   userData: 
   assetBundleName: 
   assetBundleVariant: 
