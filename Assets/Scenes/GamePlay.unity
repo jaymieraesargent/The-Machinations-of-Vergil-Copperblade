@@ -2978,7 +2978,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce36a4ad458075f4b9d438afe6f094a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeLeft: 5
+  timeLeft: 8
   text: {fileID: 353343093}
   gameOverScreen: {fileID: 895261089}
 --- !u!4 &986645610
@@ -4240,8 +4240,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c72f5cc69d3852e4d829da5fc2210070, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  teams: []
+  teams:
+  - score: 0
+  - score: 0
   spawnPoints: []
+  scoreText:
+  - {fileID: 2103114533}
+  - {fileID: 929345941}
 --- !u!4 &1416993449
 Transform:
   m_ObjectHideFlags: 0

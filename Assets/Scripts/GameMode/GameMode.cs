@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameMode : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class GameMode : MonoBehaviour
 
     public List<Team> teams;
     public List<Transform> spawnPoints;
+    public List<Text> scoreText;
 
     protected void Start()
     {
@@ -27,6 +29,7 @@ public class GameMode : MonoBehaviour
     public void AddScore(int teamID, int score)
     {
         teams[teamID].score += score;
+        scoreText[teamID].text = score.ToString();
     }
 }
 
@@ -34,6 +37,5 @@ public class GameMode : MonoBehaviour
 public class Team
 {
     public int score;
-
 }
 
